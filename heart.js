@@ -1,7 +1,7 @@
-/* 鼠标特效 - 小星星拖尾 */
+/* 红色爱心鼠标跟随效果 */
 (function fairyDustCursor() {
 
-    var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]
+    var possibleColors = ["#FF1744", "#E91E63", "#C2185B", "#AD1457", "#880E4F"];
     var width = window.innerWidth;
     var height = window.innerHeight;
     var cursor = { x: width / 2, y: width / 2 };
@@ -24,11 +24,17 @@
     }
 
     function onMouseMove(e) {
-        cursor.x = e.clientX;
-        cursor.y = e.clientY;
-
-        addParticle(cursor.x, cursor.y, possibleColors[Math.floor(Math.random() * possibleColors.length)]);
+        // 添加时间间隔控制
+        var now = Date.now();
+        if (!window.lastParticleTime || now - window.lastParticleTime > 50) { // 50ms间隔
+            cursor.x = e.clientX;
+            cursor.y = e.clientY;
+    
+            addParticle(cursor.x, cursor.y, possibleColors[Math.floor(Math.random() * possibleColors.length)]);
+            window.lastParticleTime = now;
+        }
     }
+
 
     function addParticle(x, y, color) {
         var particle = new Particle();
