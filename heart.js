@@ -20,8 +20,8 @@
         // 默认配置
         this.config = {
             colors: ["#FF1744", "#E91E63", "#C2185B", "#AD1457", "#880E4F"],
-            density: 0.5,        // 爱心生成密度 (0-1)
-            frequency: 50,       // 生成频率 (ms)
+            density: 0.4,        // 爱心生成密度 (0-1)
+            frequency: 80,       // 生成频率 (ms)
             lifeSpan: 150,      // 爱心生命周期
             character: "♥",      // 爱心字符
             fontSize: "20px",    // 字体大小
