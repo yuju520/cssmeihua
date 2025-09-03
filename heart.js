@@ -26,7 +26,7 @@
     function onMouseMove(e) {
         // 添加时间间隔控制
         var now = Date.now();
-        if (!window.lastParticleTime || now - window.lastParticleTime > 50) { // 50ms间隔
+        if (!window.lastParticleTime || now - window.lastParticleTime > 200) { // 2000ms间隔
             cursor.x = e.clientX;
             cursor.y = e.clientY;
     
